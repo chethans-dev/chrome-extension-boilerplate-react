@@ -1,0 +1,36 @@
+{
+  "name": "React Boilerplate",
+  "description": "Chrome Extension in React!",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "React Boilerplate",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["storage", "sidePanel"],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
